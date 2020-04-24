@@ -38,26 +38,26 @@ public class ProxyComponentTest {
     public void testDynamicProxy(){
         //动态代理可以代理任何对象
         Animal monkey = new Monkey();
-        DynamicProxy dynamicProxyTools = new DynamicProxy(monkey);
-        Animal monkeyProxy = (Animal) dynamicProxyTools.newProxyInstance();
+        DynamicProxyFactory dynamicProxyFactory = new DynamicProxyFactory(monkey);
+        Animal monkeyProxy = (Animal) dynamicProxyFactory.newProxyInstance();
         monkeyProxy.eat();
 
         Machine phone = new Phone();
-        dynamicProxyTools.setTarget(phone);
-        Machine phoneProxy = (Machine) dynamicProxyTools.newProxyInstance();
+        dynamicProxyFactory.setTarget(phone);
+        Machine phoneProxy = (Machine) dynamicProxyFactory.newProxyInstance();
         phoneProxy.compute();
         /*
         运行解决如下：
         -------- begin --------
-        This DynamicProxy is dynamicProxyMethodBeforeActioning.
+        This DynamicProxyFactory is dynamicProxyMethodBeforeActioning.
         This Monkey is eating.
-        This DynamicProxy is dynamicProxyMethodAfterActioning.
+        This DynamicProxyFactory is dynamicProxyMethodAfterActioning.
         -------- end --------
 
                 -------- begin --------
-        This DynamicProxy is dynamicProxyMethodBeforeActioning.
+        This DynamicProxyFactory is dynamicProxyMethodBeforeActioning.
         This Phone is computeing.
-        This DynamicProxy is dynamicProxyMethodAfterActioning.
+        This DynamicProxyFactory is dynamicProxyMethodAfterActioning.
         -------- end --------
         */
     }
