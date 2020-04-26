@@ -12,7 +12,7 @@ Animal <|.. Monkey
 Animal <|.. StaticProxy
 
 
-StaticProxy ..> Animal
+StaticProxy --> Animal
 
 interface  Mechine
 class Phone

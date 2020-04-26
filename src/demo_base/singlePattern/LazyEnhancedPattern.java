@@ -5,7 +5,7 @@ public class LazyEnhancedPattern {
     private static int initNum = 0;
 
     private LazyEnhancedPattern() {
-        System.out.println("LazyPattern initialization :"+ ++initNum);
+        System.out.println("LazyPattern initialization :" + ++initNum);
     }
 
     public static synchronized LazyEnhancedPattern getSimpleInstance() {
