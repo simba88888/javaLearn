@@ -1,0 +1,30 @@
+@startuml
+
+title Proxy Pattern Diagram
+
+interface Animal
+class Person
+class Monkey
+class StaticProxy
+
+Animal <|.. Person
+Animal <|.. Monkey
+Animal <|.. StaticProxy
+
+
+StaticProxy ..> Animal
+
+interface  Mechine
+class Phone
+class Computer
+
+Mechine <|-- Phone
+Mechine <|-- Computer
+
+interface InvocationHandler
+class DynamicProxyFactory
+
+InvocationHandler <|-- DynamicProxyFactory
+
+
+@enduml
