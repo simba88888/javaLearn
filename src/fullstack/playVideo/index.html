@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- import bootstrap -->
+    <link href="./utils/bootstrap-4.4.1/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- import custom css -->
+    <link href="./index.css" rel="stylesheet" type="text/css">
+
+    <title>Lets play video</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="playMechine">
+            <video id="videoSrc">
+                <source src="./depository/shanghai.mp4" type="video/mp4" />
+            </video>
+        </div>
+
+        <div class="playController">
+            <span>
+                <img id="play" src="./icons/play.svg" onclick="playVid()" />
+            </span>
+            <span>
+                <img id="pause" src="./icons/pause-fill.svg" onclick="pauseVid()" />
+            </span>
+            <span>
+                <img id="addVoice" src="./icons/volume-up.svg" onclick="volumeUp()"/>
+            </span>
+            <span>
+                <img id="lowerVoice" src="./icons/volume-down.svg"  onclick="volumeDown()"/>
+            </span>
+            <span>
+                <img id="stop" src="./icons/stop.svg" onclick="stop()"/>
+            </span>
+            <span>
+                <img id="mute" src="./icons/volume-mute.svg" onclick="mute()" />
+            </span>
+            <div>
+                <span>
+                    <img id="like" src="./icons/heart-fill.svg" onclick="likeMe()"/>
+                    <span id="likeNum">0</span>
+                </span>
+                <span>
+                    <img id="unlike" src="./icons/heart.svg" onclick="unlikeMe()"/>
+                    <span id="unlikeNum">0</span>
+                </span>
+            </div>          
+        </div>
+        <div class="videoSelect" onchange="selectChange()">
+            <span>Video List</span>
+            <select id="select">
+                <option value="./depository/shanghai.mp4" selected>ShangHai Video</option>
+                <option value="./depository/what is family.mp4">Family Video</option>
+            </select>
+        </div>
+      
+    </div>
+    <script src="index.js">
+    </script>
+</body>
+
+
+</html>
