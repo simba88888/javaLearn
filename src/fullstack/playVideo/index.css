@@ -1,0 +1,34 @@
+.container{
+    margin-top: 30px;
+    background-color: aliceblue;
+    max-width: 600px;
+    padding-left: 180px;
+    margin:0,auto;
+}
+.playMechine{
+    width: 400px;
+    position: relative;
+}
+video{
+    height: 450px;
+}
+
+.playController{
+    margin: 0,auto;
+}
+.playController span img{
+    width: 30px;
+    margin: 5px;
+}
+.videoSelect span{
+   background-color: burlywood;
+}
+
+.videoSelect select{
+    background-color: bisque;
+}
+
+.btn{
+    margin-left: 20px;
+    text-align: center;
+}

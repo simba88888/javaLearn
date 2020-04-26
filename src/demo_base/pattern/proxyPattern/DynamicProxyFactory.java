@@ -6,11 +6,11 @@ import java.lang.reflect.Proxy;
 /**
  * @author BinYang
  */
-public class DynamicProxy implements InvocationHandler {
+public class DynamicProxyFactory implements InvocationHandler {
     //被代理的对象
     private Object target;
 
-    public DynamicProxy(Object target) {
+    public DynamicProxyFactory(Object target) {
         this.target = target;
     }
 
@@ -32,11 +32,11 @@ public class DynamicProxy implements InvocationHandler {
 
     public void dynamicProxyMethodBeforeAction() {
         System.out.println("-------- begin --------");
-        ToolUtils.printAction(DynamicProxy.class);
+        ToolUtils.printAction(DynamicProxyFactory.class);
     }
 
     public void dynamicProxyMethodAfterAction() {
-        ToolUtils.printAction(DynamicProxy.class);
+        ToolUtils.printAction(DynamicProxyFactory.class);
         System.out.println("-------- end --------");
         System.out.println();
     }
