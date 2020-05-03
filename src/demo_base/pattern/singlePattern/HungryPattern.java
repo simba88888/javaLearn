@@ -1,4 +1,4 @@
-package demo_base.singlePattern;
+package demo_base.pattern.singlePattern;
 
 public class HungryPattern {
     private static HungryPattern hungryPattern = new HungryPattern();

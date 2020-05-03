@@ -1,4 +1,4 @@
-package demo_base.singlePattern;
+package demo_base.pattern.singlePattern;
 
 import org.junit.Test;
 
