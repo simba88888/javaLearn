@@ -33,4 +33,26 @@ public class SingleComponentTest {
         num = 1;
         System.out.println("num++: " + num++ + "\t num:" + num);//1,2
     }
+
+    @Test
+    public void testEnumSingleton() {
+        // 单例测试
+        SingleEnumPattern firstSingleton = SingleEnumPattern.INSTANCE;
+        firstSingleton.setObjName("firstName");
+        System.out.println(firstSingleton.getObjName());
+        SingleEnumPattern secondSingleton = SingleEnumPattern.INSTANCE;
+        secondSingleton.setObjName("secondName");
+        System.out.println(firstSingleton.getObjName());
+        System.out.println(secondSingleton.getObjName());
+
+        // 反射获取实例测试
+        try {
+            SingleEnumPattern[] enumConstants = SingleEnumPattern.class.getEnumConstants();
+            for (SingleEnumPattern enumConstant : enumConstants) {
+                System.out.println(enumConstant.getObjName());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

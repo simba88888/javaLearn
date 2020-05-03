@@ -18,3 +18,5 @@ public class DoubleCheckPattern {
         return single;
     }
 }
+
+
