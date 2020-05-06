@@ -1,0 +1,36 @@
+@startuml
+
+title Factory Pattern Diagram
+
+interface EncryptionAlgorithm{
+  + encryption(String plaintext): String
+}
+
+class Sha265EncryptionAlgorithm{
+      + encryption(String plaintext): String
+}
+
+class Sha512EncryptionAlgorithm{
+  + encryption(String plaintext): String
+}
+
+EncryptionAlgorithm <|.. Sha265EncryptionAlgorithm
+EncryptionAlgorithm <|.. Sha512EncryptionAlgorithm
+
+abstract Encryptor {
+   + writeToDisk(String plaintext):String
+   + getEncryptionAlgorithm():EncryptionAlgorithm
+}
+class Sha256Encryptor{
+      + getEncryptionAlgorithm(): EncryptionAlgorithm
+}
+
+class Sha512Encryptor{
+  + getEncryptionAlgorithm(): EncryptionAlgorithm
+}
+Encryptor <|-- Sha256Encryptor
+Encryptor <|-- Sha512Encryptor
+
+EncryptionAlgorithm <.. Encryptor
+
+@enduml
