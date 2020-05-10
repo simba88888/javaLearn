@@ -1,4 +1,4 @@
-package demo_base.pattern.strategy;
+package demo_base.pattern.strategyPattern;
 
 public class SchoolQueryStrategy implements QueryStrategy {
 

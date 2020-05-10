@@ -1,4 +1,4 @@
-package demo_base.pattern.strategy;
+package demo_base.pattern.strategyPattern;
 
 public enum IdentifyEnum {
     SCHOOL("school"), USER("user"), CLASS("class");
