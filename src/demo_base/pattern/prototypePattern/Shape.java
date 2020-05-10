@@ -5,6 +5,7 @@ public abstract class Shape implements Cloneable {
     private String id;
     protected String type;
 
+    @Override
     public Shape clone(){
         Shape cloneIntance = null;
         try {
