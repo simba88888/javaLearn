@@ -1,0 +1,26 @@
+@startuml
+
+title  prototype Pattern Diagram
+
+abstract Shape{
+   + clone():Shape
+}
+class Rectangle
+class Circle
+class Square
+
+Cloneable <|.. Shape
+Rectangle --|> Shape
+Circle --|> Shape
+Square --|> Shape
+
+class ProtoTypeContext{
+    Map<String, Shape> shapeMap
+    +getCloneShapeById(id):Shape
+}
+
+Shape <-- ProtoTypeContext
+
+ProtoTypeContext <.. TestCloneShape
+
+@enduml
