@@ -1,0 +1,21 @@
+@startuml
+
+title  Observer Pattern Diagram
+
+interface Observable{
+   + beSubscribe(Observer observer):viod
+}
+interface Observer{
+   + update():viod
+}
+class DataSource
+class View
+
+Observer <.. DataSource
+
+
+
+Observable <|.. DataSource
+Observer <|.. View
+
+@enduml
