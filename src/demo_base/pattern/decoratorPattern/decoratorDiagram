@@ -1,0 +1,22 @@
+@startuml
+
+title Decorator Pattern Diagram
+
+interface Compoment{
+   + operation():viod
+}
+
+Compoment<|..ConcreteCompoment
+
+Decorator ..> Compoment
+
+abstract Decorator{
+   - Compoment : compoment
+   + Decorator(Compoment compoment)
+   + operation()
+}
+
+Decorator <|-- ConcreteDecorator1
+Decorator <|-- ConcreteDecorator2
+
+@enduml
