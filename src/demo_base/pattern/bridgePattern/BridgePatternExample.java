@@ -1,4 +1,4 @@
-package demo_base.javase.bridgePattern;
+package demo_base.pattern.bridgePattern;
 
 interface DrawAPI {
     public void drawCircle(int radius, int x, int y);
