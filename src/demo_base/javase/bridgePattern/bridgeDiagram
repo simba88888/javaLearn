@@ -1,0 +1,25 @@
+@startuml
+
+title Bridge Pattern Diagram
+
+interface DrawAPI{
+   + drawCircle():viod
+}
+DrawAPI <|.. RedCircle
+DrawAPI <|.. GreenCircle
+
+abstract Shape{
+    -drawAPI:DrawAPI
+    +draw():void
+}
+
+class Circle{
+    +Circle(DrawAPI drawAPI)
+    +draw()
+}
+Shape <|-- Circle
+DrawAPI <.. Shape
+
+
+
+@enduml
