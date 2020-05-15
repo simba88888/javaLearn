@@ -1,0 +1,23 @@
+@startuml
+
+title Chian Of Responsibility Pattern Diagram
+
+abstract Middleware{
+   - next:Middleware
+   + linkWith(next):Middleware
+   ~ check(string username,string password):boolean
+   # checkNext(string username,string password):boolean
+   
+}
+
+class UserExistsMiddleware{
+    + check(string username,string password):boolean
+}
+class RoleCheckMiddleware{
+    + check(string username,string password):boolean
+}
+
+Middleware <|-- UserExistsMiddleware
+Middleware <|-- RoleCheckMiddleware
+
+@enduml
