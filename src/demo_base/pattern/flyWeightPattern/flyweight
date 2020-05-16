@@ -1,0 +1,27 @@
+@startuml
+
+title FlyWeight Pattern Diagram
+
+enum Color{
+    -name:string
+}
+interface LineFlyWeight{
+    +getColor():Color
+    +operation():void
+}
+class Line{
+    -color:Color
+    +Line(Color color)
+    +getColor():Color
+    +operation():void
+}
+Class LineFlyWeightFactory{
+    -List<LineFlyWeight> lines
+    +getLineFlyWeight(Color color):LineFlyWeight
+}
+
+LineFlyWeight <|.. Line
+Color <-- Line
+Color <.. LineFlyWeightFactory
+LineFlyWeight <-- LineFlyWeightFactory
+@enduml
