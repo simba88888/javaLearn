@@ -1,0 +1,22 @@
+@startuml
+
+title Composite Pattern Diagram
+
+
+interface Node{
+    +operation():void
+}
+class File{
+    -name:string
+    +File(string name)
+}
+Class Folder{
+    -List<Node> nodes
+    +add(Node node):void
+}
+
+File ..* Folder
+
+Node <|.. File
+Node <|.. Folder
+@enduml
