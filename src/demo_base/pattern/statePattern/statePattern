@@ -1,0 +1,24 @@
+@startuml
+
+title State Pattern Diagram
+
+interface State{
+    +handle(Context context):void
+}
+class ConcreStateA
+class ConcreStateB
+
+class Context{
+     - state:State;
+     + Context(State state):Context
+     + getState():State
+     + setState(State state):void
+     + handle()
+}
+
+State <|.. ConcreStateA
+State <|.. ConcreStateB
+
+State <.. Context
+State <-- Context
+@enduml
