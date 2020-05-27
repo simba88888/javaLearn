@@ -1,0 +1,27 @@
+@startuml
+
+title Command Pattern Diagram
+
+abstract Command{
+    receiver:Receiver
+    +execute():void
+}
+class ConcreCommandA
+class ConcreCommandB
+
+class Invoker{
+     - command:Command;
+     + Invoker(Command command):Invoker
+     + request()
+}
+
+class Receiver{
+    + action();
+}
+
+Command <|-- ConcreCommandA
+Command <|-- ConcreCommandB
+
+Command <-- Invoker
+Command --> Receiver
+@enduml
