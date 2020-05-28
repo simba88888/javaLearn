@@ -1,0 +1,27 @@
+@startuml
+
+title Template Pattern Diagram
+
+abstract BaseSteps{
+    +TemplateMethod():void
+    +handleFirst():void
+    +handleSecond():void
+    +handleThirdth():void
+    +handleFourth():void
+}
+
+class ConcreA{
+    +handleSecond():void
+    +handleThirdth():void
+    +handleFourth():void
+}
+class ConcreB{
+    +handleSecond():void
+    +handleThirdth():void
+    +handleFourth():void
+}
+
+BaseSteps <|-- ConcreA
+BaseSteps <|-- ConcreB
+
+@enduml
