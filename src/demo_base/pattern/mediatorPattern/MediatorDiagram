@@ -1,0 +1,56 @@
+@startuml
+
+title Mediator Pattern Diagram
+
+interface Mediator{
+    +  chooseProduct(Student stu,String scale):Product
+    +  getProductPerson(Product product):Student
+}
+
+class ConcreHouseMediator{
+    - BigStudent:bigStudent
+    - MiddleStudent:middleStudent
+    - SmallStudent:smallStudent
+    - House:bigHouse
+    - House:smallHouse
+    - House:otherHouse
+     +  chooseProduct(Student stu,String scale):Product
+    +  getProductPerson(Product product):Student
+}
+
+Mediator <|.. ConcreHouseMediator
+
+abstract Student{
+    - mediator:Mediator
+    +needHouse(String scale):House
+}
+
+class BigStudent
+
+class MiddleStudent
+
+class SmallStudent
+
+interface Product{
+   + assign(Student student):Product
+}
+class House{
+    - mediator:Mediator
+    -student:Student
+   + assign(Student student):Product
+}
+
+Student <|-- BigStudent
+Student <|-- MiddleStudent
+Student <|-- SmallStudent
+
+ConcreHouseMediator --> BigStudent
+ConcreHouseMediator --> MiddleStudent
+ConcreHouseMediator --> SmallStudent
+ConcreHouseMediator --> House
+
+
+Product <|.. House
+
+
+@enduml
