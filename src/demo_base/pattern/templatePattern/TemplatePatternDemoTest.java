@@ -65,5 +65,18 @@ public class TemplatePatternDemoTest {
 
         baseSteps = new ConcreB();
         baseSteps.templateMethod();
+
+    /*    BaseSteps handleFirst
+        ConcreA handleSecond
+        ConcreA handleThirdth
+        ConcreA handleFourth
+
+        BaseSteps handleFirst
+        ConcreB handleSecond
+        ConcreB handleThirdth
+        ConcreB handleFourth*/
     }
 }
+
+
+
