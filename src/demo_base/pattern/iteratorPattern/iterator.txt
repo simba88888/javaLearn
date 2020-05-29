@@ -1,0 +1,35 @@
+@startuml
+
+title Iterator Pattern Diagram
+
+interface Iterator<E>{
+     E first();
+    boolean hasNext();
+    E next();
+}
+
+class ConcreIterator<E>{
+    -list:E[];
+    -index:int;
+    ConcreIterator(E[] list):ConcreIterator;
+
+}
+
+Iterator <|.. ConcreIterator
+
+interface Aggregate<E>{
+    +add(E item):void
+    +remove(E item):void
+    +getIterator():Iterator
+}
+
+class ConcreAggregate<E>{
+    -index:int
+    -final list:Object[]
+    -size:int
+    -fastRemove(int index):void
+}
+
+Aggregate <|-- ConcreAggregate
+
+@enduml
