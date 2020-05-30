@@ -1,0 +1,29 @@
+@startuml
+
+title Interpreter Pattern Diagram
+
+class Exception{
+    +interpret(string info):boolean;
+}
+class TerminalExpression{
+    -set:Set<String>;
+    TerminalExpression(string[] data):TerminalExpression;
+}
+class AndExpression{
+    -city:Exception;
+    -person:Exception;
+    AndExpression(Exception city,Exception person):AndExpression
+}
+
+class Context{
+    -citys:string[]
+    -persons:string[]
+    Context():Context
+    freeRide(string info):void
+}
+
+Exception <.. Context
+TerminalExpression <.. Context
+AndExpression <.. Context
+
+@enduml
