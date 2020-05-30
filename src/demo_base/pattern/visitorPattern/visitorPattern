@@ -1,0 +1,48 @@
+@startuml
+
+title Visitor Pattern Diagram
+
+interface Visitor{
+    visit(ConcreElementA a):void
+    visit(ConcreElementB b):void
+}
+class ConcreVisitorA
+
+class ConcreVisitorB
+
+Visitor <|.. ConcreVisitorA
+Visitor <|.. ConcreVisitorB
+
+interface Element{
+    acceptVisitor(Visitor visitor):void
+}
+
+class ConcreElementA
+
+class ConcreElementB
+
+Element <|.. ConcreElementA
+Element <|.. ConcreElementB
+
+interface Aggregate<E>{
+    +add(E item):boolean
+    +remove(E item):boolean
+    +getIterator():Iterator
+    +visitorAll(Visitor visitor):void
+}
+
+class ConcreAggregate<E>{
+    -index:int
+    -final list:Object[]
+    -size:int
+    -fastRemove(int index):void
+}
+
+Aggregate <|-- ConcreAggregate
+
+Visitor <.. ConcreAggregate
+
+ConcreElementA <.. Visitor
+ConcreElementB <.. Visitor
+
+@enduml
