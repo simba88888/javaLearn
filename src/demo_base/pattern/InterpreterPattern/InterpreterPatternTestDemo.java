@@ -1,4 +1,4 @@
-package demo_base.pattern.Interpreter;
+package demo_base.pattern.InterpreterPattern;
 
 import java.util.HashSet;
 import java.util.Set;
