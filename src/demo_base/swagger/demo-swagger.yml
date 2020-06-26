@@ -1,0 +1,19 @@
+# 一个包含多种纲要的元素，可重复使用组件
+components:
+  schemas:
+ 
+  responses:
+  
+  parameters:
+  
+  examples:
+    
+  requestBodies:
+  
+  headers:
+    
+  securitySchemes:
+  
+  links:
+  
+  callbacks:
