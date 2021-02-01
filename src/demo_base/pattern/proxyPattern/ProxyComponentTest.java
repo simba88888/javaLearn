@@ -62,5 +62,32 @@ public class ProxyComponentTest {
         */
     }
 
+    @Test
+    public void testDynamicProxy2(){
+        //动态代理可以代理任何对象
+        Animal monkey = new Monkey();
+        DynamicProxyFactory2 dynamicProxyFactory = new DynamicProxyFactory2(monkey);
+        Animal monkeyProxy = (Animal) dynamicProxyFactory.newProxyInstance();
+        monkeyProxy.eat();
+
+        Machine phone = new Phone();
+        dynamicProxyFactory.setTarget(phone);
+        Machine phoneProxy = (Machine) dynamicProxyFactory.newProxyInstance();
+        phoneProxy.compute();
+        /*
+        运行解决如下：
+        -------- begin --------
+        This DynamicProxyFactory is dynamicProxyMethodBeforeActioning.
+        This Monkey is eating.
+        This DynamicProxyFactory is dynamicProxyMethodAfterActioning.
+        -------- end --------
+
+                -------- begin --------
+        This DynamicProxyFactory is dynamicProxyMethodBeforeActioning.
+        This Phone is computeing.
+        This DynamicProxyFactory is dynamicProxyMethodAfterActioning.
+        -------- end --------
+        */
+    }
 
 }
