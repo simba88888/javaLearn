@@ -3,7 +3,7 @@ package demo_base.pattern.proxyPattern;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-public class DynamicProxy<T> implements InvocationHandler {
+public class DynamicProxy implements InvocationHandler {
     private Object target;
     public DynamicProxy(Object object) {
         this.target = object;
@@ -13,6 +13,7 @@ public class DynamicProxy<T> implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         dynamicProxyMethodBeforeAction();
         Object obj = method.invoke(target, args);
+        System.out.println("正在调用这个方法："+method.getName());
         dynamicProxyMethodAfterAction();
         return obj;
     }

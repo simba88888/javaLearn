@@ -20,7 +20,7 @@ public class DynamicProxyFactory2{
 
     //generate proxy object,生成代理对象
     public Object newProxyInstance(){
-        return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new DynamicProxy<>(target));
+        return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), new DynamicProxy(target));
     }
 
 }

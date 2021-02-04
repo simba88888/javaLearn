@@ -65,7 +65,17 @@ public class ProxyComponentTest {
     @Test
     public void testDynamicProxy2(){
         //动态代理可以代理任何对象
-        Animal monkey = new Monkey();
+        Animal monkey = new Animal() {
+            @Override
+            public void eat() {
+
+            }
+
+            @Override
+            public void run() {
+
+            }
+        };// new Monkey();
         DynamicProxyFactory2 dynamicProxyFactory = new DynamicProxyFactory2(monkey);
         Animal monkeyProxy = (Animal) dynamicProxyFactory.newProxyInstance();
         monkeyProxy.eat();
